@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.41.2'   # You can change version
+          flutter-version: '3.41.2'
 
       - name: Verify Flutter
         run: flutter --version
@@ -26,3 +26,9 @@ jobs:
 
       - name: Build APK
         run: flutter build apk --debug
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: build/app/outputs/flutter-apk/app-debug.apk
