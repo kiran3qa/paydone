@@ -1,4 +1,4 @@
-package com.example.pay_speaker
+package com.example.payalert
 
 import android.content.Context
 import android.media.AudioManager
