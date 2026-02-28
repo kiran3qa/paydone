@@ -1,10 +1,10 @@
 package com.example.payalert
 
 import android.content.SharedPreferences
+import android.content.Context
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
-import androidx.preference.PreferenceManager
 import java.util.LinkedHashMap
 
 class PaymentNotificationListener : NotificationListenerService() {
@@ -35,7 +35,7 @@ class PaymentNotificationListener : NotificationListenerService() {
     
     override fun onCreate() {
         super.onCreate()
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        sharedPreferences = getSharedPreferences("payalert_prefs", Context.MODE_PRIVATE)
     }
     
     override fun onNotificationPosted(sbn: StatusBarNotification) {
